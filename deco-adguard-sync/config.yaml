@@ -1,5 +1,10 @@
 name: "Deco → AdGuard Sync"
-description: "Sincroniza clientes del TP-Link Deco XE75 Pro con AdGuard Home via API"
+description: >
+  Automatically syncs connected clients from your TP-Link Deco XE75 Pro
+  to AdGuard Home using both APIs. Runs on startup and every 6 hours.
+  Only devices with an IP >= min_ip_suffix are exported (e.g. 100 means
+  only IPs like 10.x.x.100 and above). Clients already existing in
+  AdGuard Home (matched by name or IP) are safely skipped.
 version: "1.0.0"
 slug: "deco-adguard-sync"
 init: false
@@ -11,12 +16,29 @@ homeassistant_api: false
 hassio_api: false
 
 options:
+  # URL of your main Deco node (the one you log into)
   deco_host: "https://10.0.2.1"
+
+  # Local admin password for the Deco (set in the Deco app under More → Local Management)
   deco_pass: ""
+
+  # URL of your AdGuard Home instance, including port
   agh_host: "https://10.0.2.232:3002"
+
+  # AdGuard Home username
   agh_user: "admin"
+
+  # AdGuard Home password
   agh_pass: ""
+
+  # Only export devices whose IP last octet is >= this value.
+  # Example: 100 means only IPs ending in .100 or higher are exported.
+  # Use this to exclude infrastructure devices (router, APs, switches)
+  # which typically have low IPs like .1, .2, etc.
   min_ip_suffix: 100
+
+  # Run a sync immediately when the add-on starts.
+  # After that, syncs automatically every 6 hours.
   run_on_start: true
 
 schema:
