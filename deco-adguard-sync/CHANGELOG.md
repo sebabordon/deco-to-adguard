@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1
+## 1.0.2
 - Translated add-on configuration and documentation to English
 - Added detailed descriptions for all configuration options
 
