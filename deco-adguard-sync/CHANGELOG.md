@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3
+- Updated password fields properly
+  
 ## 1.0.2
 - Translated add-on configuration and documentation to English
 - Added detailed descriptions for all configuration options
