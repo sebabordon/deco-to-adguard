@@ -1,3 +1,5 @@
+# Homeassistant Apps by me (actually Claude, but wiht my ideas)
+
 # Deco → AdGuard Sync — Home Assistant Add-on
 
 Automatically syncs connected devices from your **TP-Link Deco XE75 Pro** into **AdGuard Home** as persistent clients, using both devices' local APIs.
