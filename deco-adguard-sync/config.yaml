@@ -43,9 +43,9 @@ options:
 
 schema:
   deco_host: str
-  deco_pass: str
+  deco_pass: password
   agh_host: str
   agh_user: str
-  agh_pass: str
+  agh_pass: password
   min_ip_suffix: int
   run_on_start: bool
