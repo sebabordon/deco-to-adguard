@@ -1,0 +1,1 @@
+/etc/cont-init.d/cups.sh true root 0755 0755
