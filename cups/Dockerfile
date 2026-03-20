@@ -30,8 +30,7 @@ RUN apt-get update && \
         libcupsimage2:armhf \
     && \
     rm -rf /var/lib/apt/lists/*
-# Cache bust 1.0.9
-
+# Cache bust 1.1.0
 COPY rootfs /
 RUN chmod 755 /etc/cont-init.d/cups.sh
 RUN find /etc/cont-init.d/ -type f -exec chmod a+x {} \; && \
