@@ -16,6 +16,7 @@ privileged:
   - SYS_ADMIN
 devices:
   - /dev/bus/usb
+usb: true
 map:
   - data:rw
   - share:rw
