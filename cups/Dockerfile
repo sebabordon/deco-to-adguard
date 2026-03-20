@@ -21,6 +21,7 @@ RUN \
         net-snmp \
         epson-inkjet-printer-escpr \
         curl
+        splix
 # Copy data
 COPY rootfs /
 RUN chmod a+x /etc/cont-init.d/cups.sh
