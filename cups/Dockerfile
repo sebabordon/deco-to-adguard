@@ -21,7 +21,7 @@ RUN apk add --no-cache \
         curl \
         libc6-compat \
         libgcc \
-        libstdc++
+        libstdc++ \
         epson-inkjet-printer-escpr 
 
 # Copy data
