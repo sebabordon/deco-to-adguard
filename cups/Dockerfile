@@ -19,6 +19,9 @@ RUN apk add --no-cache \
         patchelf \
         libstdc++ \
         curl \
+        libc6-compat \
+        libgcc \
+        libstdc++
         epson-inkjet-printer-escpr 
 
 # Copy data
@@ -28,7 +31,9 @@ RUN chmod a+x /etc/cont-init.d/cups.sh && \
     chmod a+x /usr/lib/cups/filter/pstosecps && \
     patchelf --set-interpreter /lib/ld-linux-armhf.so.3 /usr/lib/cups/filter/rastertospl && \
     patchelf --set-interpreter /lib/ld-linux-armhf.so.3 /usr/lib/cups/filter/pstosecps
-
+RUN ln -sf /lib/ld-musl-aarch64.so.1 /lib/ld-linux-aarch64.so.1 || true
+    
 EXPOSE 631
+
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
     CMD curl -f http://localhost:631/ || exit 1
