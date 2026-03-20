@@ -30,9 +30,10 @@ RUN apt-get update && \
         libcupsimage2:armhf \
     && \
     rm -rf /var/lib/apt/lists/*
+# Cache bust 1.0.9
 
 COPY rootfs /
-
+RUN chmod 755 /etc/cont-init.d/cups.sh
 RUN find /etc/cont-init.d/ -type f -exec chmod a+x {} \; && \
     chmod a+x /usr/lib/cups/filter/rastertospl && \
     chmod a+x /usr/lib/cups/filter/pstosecps && \
