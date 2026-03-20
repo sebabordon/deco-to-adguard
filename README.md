@@ -1,4 +1,3 @@
-```markdown
 # 🏠 sebabordon's Home Assistant Add-ons
 
 A collection of Home Assistant add-ons built to scratch my own itches.
