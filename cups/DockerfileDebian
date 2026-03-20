@@ -18,9 +18,7 @@ RUN apt-get update && \
         libcupsimage2 \
         curl \
         patchelf \
-        dpkg \
         && \
-    # Habilitar multiarch para armhf
     dpkg --add-architecture armhf && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -30,12 +28,12 @@ RUN apt-get update && \
         libcupsimage2:armhf \
     && \
     rm -rf /var/lib/apt/lists/*
-# Cache bust 1.1.0
+
 COPY rootfs /
-RUN chmod 755 /etc/cont-init.d/cups.sh
-RUN find /etc/cont-init.d/ -type f -exec chmod a+x {} \; && \
-    chmod a+x /usr/lib/cups/filter/rastertospl && \
-    chmod a+x /usr/lib/cups/filter/pstosecps && \
+
+RUN chmod 755 /etc/cont-init.d/cups.sh && \
+    chmod 755 /usr/lib/cups/filter/rastertospl && \
+    chmod 755 /usr/lib/cups/filter/pstosecps && \
     patchelf --set-interpreter /lib/ld-linux-armhf.so.3 /usr/lib/cups/filter/rastertospl && \
     patchelf --set-interpreter /lib/ld-linux-armhf.so.3 /usr/lib/cups/filter/pstosecps
 
