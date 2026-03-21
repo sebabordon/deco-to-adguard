@@ -1,6 +1,6 @@
 # Non Working CUPS for Xerox 3020. 
 
-```markdown
+
 # CUPS Print Server for Home Assistant
 
 A Home Assistant add-on that runs a CUPS (Common Unix Printing System) print server, allowing you to share USB printers over your local network. Includes a web administration interface accessible at `http://<your-ha-ip>:631` and supports AirPrint for automatic discovery on macOS and iOS devices.
